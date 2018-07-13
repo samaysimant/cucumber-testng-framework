@@ -6,4 +6,15 @@
       <class name="com.automationframeworks.suiterunners.SuiteRunnerTest"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.automationframeworks.suiterunners.SuiteRunnerTest">
+        <methods>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+          <include name="feature" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.automationframeworks.suiterunners.SuiteRunnerTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

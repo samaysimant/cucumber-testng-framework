@@ -1,11 +1,13 @@
 package com.automationframework.stepdefinitions;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import com.automationframeworks.cucumber_selenium_testng.WebdriverManager;
 import com.automationframeworks.pageobjects.HomePage;
 import com.automationframeworks.pageobjects.LoginPage;
 import com.automationframeworks.pageobjects.RegistrationPage;
+import com.cucumber.listener.Reporter;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
@@ -62,10 +64,12 @@ public class Feature1StepDefinitions {
 	@When("^I enter my credentials and pressed submit$")
 	public void i_enter_my_credentials_and_pressed_submit() throws Throwable {
 	    System.out.println("Entered username and password");
+	    Reporter.addStepLog("Entered UserName and Password------");
 	}
 
 	@Then("^I should be at landing page$")
 	public void i_should_be_at_landing_page() throws Throwable {
 	  System.out.println("I am at landing page");
+	  Assert.assertTrue(false);
 	}
 }
