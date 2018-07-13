@@ -2,6 +2,8 @@ package com.automationframeworks.pageobjects;
 
 import org.openqa.selenium.WebDriver;
 
+
+
 public class LoginPage extends BaseNavigation{
 	
 	WebDriver driver;
@@ -11,6 +13,7 @@ public class LoginPage extends BaseNavigation{
 	}
 	
 	public RegistrationPage goToRegistrationPage() {
+		Utilities.repostWait(btnRegister);
 		driver.findElement(btnRegister).click();
 		return registrationPage==null?registrationPage=new RegistrationPage(driver):registrationPage;
 	}

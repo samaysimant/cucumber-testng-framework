@@ -17,12 +17,13 @@ import cucumber.api.java.Before;
  * Hello world!
  *
  */
-public class BaseTest 
+public class BaseTestSuite 
+
 
 
 {
 	WebDriver driver;
-	
+	public static final long IMPLICIT_WAIT=30;
 	
     @Before
     public void before() {
