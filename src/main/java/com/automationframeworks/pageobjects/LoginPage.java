@@ -9,4 +9,9 @@ public class LoginPage extends BaseNavigation{
 	public LoginPage(WebDriver driver) {
 		this.driver=driver;
 	}
+	
+	public RegistrationPage goToRegistrationPage() {
+		driver.findElement(btnRegister).click();
+		return registrationPage==null?registrationPage=new RegistrationPage(driver):registrationPage;
+	}
 }

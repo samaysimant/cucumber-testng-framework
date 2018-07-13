@@ -25,9 +25,6 @@ public class BaseNavigation {
 		return loginPage==null?loginPage=new LoginPage(driver):loginPage;
 	}
 
-	public RegistrationPage goToRegistrationPage() {
-		driver.findElement(btnRegister).click();
-		return registrationPage==null?registrationPage=new RegistrationPage(driver):registrationPage;
-	}
+	
 
 }
