@@ -29,10 +29,9 @@ Feature: Planit Automation Features
     When I entered username and email
     And clicked on Register button
     Then I must get Registration confirmation message
- 
-    
-    @smoke
-  Scenario: User creation Test 
+
+  @smoke
+  Scenario: User creation Test
     Given I am in home page
     And I cliked My account link to navigate to signup page
     When I enter my credentials and pressed submit
