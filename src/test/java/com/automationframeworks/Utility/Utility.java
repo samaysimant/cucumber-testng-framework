@@ -19,7 +19,8 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.automationframework.stepdefinitions.BaseTestSuite;
+
+import com.automationframework.stepdefinitions.Hooks;
 
 public class Utility {
 
@@ -98,7 +99,7 @@ public class Utility {
 			}
 
 		}
-		waitDriver.manage().timeouts().implicitlyWait(BaseTestSuite.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		waitDriver.manage().timeouts().implicitlyWait(Hooks.IMPLICIT_WAIT, TimeUnit.SECONDS);
 	}
 
 	/*
@@ -120,7 +121,7 @@ public class Utility {
 			(new WebDriverWait(waitDriver, 20)).until(ExpectedConditions.presenceOfElementLocated(locator));
 			(new WebDriverWait(waitDriver, 20)).until(ExpectedConditions.visibilityOfElementLocated(locator));
 		}
-		waitDriver.manage().timeouts().implicitlyWait(BaseTestSuite.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		waitDriver.manage().timeouts().implicitlyWait(Hooks.IMPLICIT_WAIT, TimeUnit.SECONDS);
 	}
 
 	/*

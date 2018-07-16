@@ -9,7 +9,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.automationframework.stepdefinitions.BaseTestSuite;
+
+import com.automationframework.stepdefinitions.Hooks;
 import com.google.common.io.Files;
 
 public class WebdriverManager {
@@ -34,7 +35,7 @@ public class WebdriverManager {
 		System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(BaseTestSuite.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Hooks.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		}
 		return driver;
 	}

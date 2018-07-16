@@ -69,7 +69,13 @@
 			<artifactId>extentreports</artifactId>
 			<version>3.1.2</version>
 		</dependency>
-		
+		<!-- https://mvnrepository.com/artifact/com.codoid.products/fillo -->
+		<dependency>
+			<groupId>com.codoid.products</groupId>
+			<artifactId>fillo</artifactId>
+			<version>1.18</version>
+		</dependency>
+
 
 	</dependencies>
 
@@ -85,7 +91,7 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
@@ -97,25 +103,25 @@
 					<!-- <parallel>classes</parallel> <threadCount>2</threadCount> -->
 					<systemPropertyVariables>
 						<browser>${browser.test}</browser>
-						
+
 					</systemPropertyVariables>
-					
-					
+
+
 				</configuration>
 			</plugin>
 		</plugins>
-		
+
 	</build>
-	
+
 	<profiles>
-	<profile>
-	  <id>smokechrome</id>
-	  <activation>
-      <activeByDefault>true</activeByDefault>
-    </activation>
-	  <properties>
+		<profile>
+			<id>smokechrome</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
 				<browser.test>chrome</browser.test>
 			</properties>
-	</profile>
+		</profile>
 	</profiles>
 </project>

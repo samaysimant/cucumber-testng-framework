@@ -6,7 +6,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
+import com.automationframeworks.Utility.ExcelReader;
 import com.automationframeworks.cucumber_selenium_testng.WebdriverManager;
+import com.codoid.products.exception.FilloException;
 import com.cucumber.listener.Reporter;
 
 import cucumber.api.Scenario;
@@ -17,7 +19,7 @@ import cucumber.api.java.Before;
  * Hello world!
  *
  */
-public class BaseTestSuite 
+public class Hooks 
 
 
 
@@ -26,9 +28,16 @@ public class BaseTestSuite
 	public static final long IMPLICIT_WAIT=30;
 	
     @Before
-    public void before() {
+    public void before(Scenario scenario) {
     	System.out.println("Initiate Driver");
     	driver=WebdriverManager.intializeDriver();
+    	System.out.println("Current scenario:"+scenario.getName());
+    	try {
+			ExcelReader.feedInputData(scenario.getName());
+		} catch (FilloException e) {
+			
+			e.printStackTrace();
+		}
     }
     
     @After
