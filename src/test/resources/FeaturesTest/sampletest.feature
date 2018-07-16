@@ -31,7 +31,7 @@ Feature: Planit Automation Features
     Then I must get Registration confirmation message
  
     
-    @smoke2
+    @smoke
   Scenario: User creation Test 
     Given I am in home page
     And I cliked My account link to navigate to signup page

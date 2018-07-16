@@ -67,13 +67,14 @@ public class Feature1StepDefinitions {
 
 	@When("^I enter my credentials and pressed submit$")
 	public void i_enter_my_credentials_and_pressed_submit() throws Throwable {
-		System.out.println("Entered username and password");
-		Reporter.addStepLog("Entered UserName and Password------");
+		loginPage.enterUserName(DataHandler.getDataFromMap("username"));
+		loginPage.enterPassword(DataHandler.getDataFromMap("password"));
+		loginPage.clickLogin();
 	}
 
 	@Then("^I should be at landing page$")
 	public void i_should_be_at_landing_page() throws Throwable {
-		System.out.println("I am at landing page");
+		Assert.assertEquals(loginPage.getErrorMsg(),"password is incorrect");
 
 	}
 }

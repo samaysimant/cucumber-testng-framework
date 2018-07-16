@@ -23,7 +23,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		"rerun:target/rerun.txt",
 		"json:target/cucumber1.json" }, glue = { "com/automationframework/stepdefinitions" }, plugin = {
 				"com.cucumber.listener.ExtentCucumberFormatter:test-output/extent-reports/report.html" }
-        ,tags= {"@regression"}         
+        ,tags= {"@smoke"}         
 		)
 public class SuiteRunnerTest {
 	private TestNGCucumberRunner testNGCucumberRunner;
