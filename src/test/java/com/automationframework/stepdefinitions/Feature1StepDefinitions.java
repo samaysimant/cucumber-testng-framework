@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import com.automationframeworks.Utility.DataHandler;
-import com.automationframeworks.cucumber_selenium_testng.WebdriverManager;
+import com.automationframeworks.Utility.WebdriverManager;
 import com.automationframeworks.pageobjects.HomePage;
 import com.automationframeworks.pageobjects.LoginPage;
 import com.automationframeworks.pageobjects.RegistrationPage;

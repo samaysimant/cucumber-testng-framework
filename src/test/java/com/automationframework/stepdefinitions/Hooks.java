@@ -7,7 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import com.automationframeworks.Utility.ExcelReader;
-import com.automationframeworks.cucumber_selenium_testng.WebdriverManager;
+import com.automationframeworks.Utility.WebdriverManager;
 import com.codoid.products.exception.FilloException;
 import com.cucumber.listener.Reporter;
 

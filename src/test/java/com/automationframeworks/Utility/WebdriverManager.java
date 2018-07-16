@@ -1,4 +1,4 @@
-package com.automationframeworks.cucumber_selenium_testng;
+package com.automationframeworks.Utility;
 
 import java.io.File;
 import java.net.InetAddress;
