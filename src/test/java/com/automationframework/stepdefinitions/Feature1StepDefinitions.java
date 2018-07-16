@@ -50,8 +50,8 @@ public class Feature1StepDefinitions {
 	@When("^I entered username and email$")
 	public void i_entered_username_and_email() throws Throwable {
 
-		registrationPage.enterUserName(DataHandler.getData.get("username"));
-		registrationPage.enterEmail(DataHandler.getData.get("email"));
+		registrationPage.enterUserName(DataHandler.getDataFromMap("username"));
+		registrationPage.enterEmail(DataHandler.getDataFromMap("email"));
 
 	}
 
