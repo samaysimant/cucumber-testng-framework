@@ -20,15 +20,19 @@
 Feature: Planit Automation Features
   I want to use this template for my feature file
 
-  @smoke
-  Scenario: Register User
+  @smoke @regression
+  Scenario Outline: Register User
     Given I am in home page
     And I cliked My account link to navigate to signup page
     When I click Register link
     Then Registration page must be displayed
-    When I entered username and email
+    When I entered "<username>" and "<email>"
     And clicked on Register button
     Then I must get Registration confirmation message
+    Examples:
+    |username|email|
+    |samaysimant|samay.techm@gmail.com|
+    |samay2|samay2.techm@gmail.com|
     
     @smoke2
   Scenario: User creation Test 

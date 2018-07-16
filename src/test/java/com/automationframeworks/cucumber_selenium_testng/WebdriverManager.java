@@ -2,13 +2,14 @@ package com.automationframeworks.cucumber_selenium_testng;
 
 import java.io.File;
 import java.net.InetAddress;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
+import com.automationframework.stepdefinitions.BaseTestSuite;
 import com.google.common.io.Files;
 
 public class WebdriverManager {
@@ -22,8 +23,19 @@ public class WebdriverManager {
 	}
 
 	public static WebDriver intializeDriver() {
+		String browser = System.getProperty("browser");
+		System.out.println("The browser is:"+browser);
+		if(browser==null) {
+			browser="chrome";
+		}
+		if (browser.equalsIgnoreCase("chrome")) {
+		//	browser = ;
+		
 		System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
 		driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(BaseTestSuite.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		}
 		return driver;
 	}
 

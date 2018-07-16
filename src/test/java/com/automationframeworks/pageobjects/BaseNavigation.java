@@ -3,6 +3,8 @@ package com.automationframeworks.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.automationframeworks.Utility.Utility;
+
 public class BaseNavigation {
 
 	public WebDriver driver;
@@ -11,6 +13,7 @@ public class BaseNavigation {
 
 	public BaseNavigation(WebDriver driver) {
 		this.driver = driver;
+		Utility.setDriver(driver);
 	}
 
 	public BaseNavigation() {
@@ -21,6 +24,7 @@ public class BaseNavigation {
 	By btnRegister = By.xpath("//a[text()='Register']");
 
 	public LoginPage goToLoginPage() {
+		Utility.repostWait(linkMyAccount);
 		driver.findElement(linkMyAccount).click();
 		return loginPage==null?loginPage=new LoginPage(driver):loginPage;
 	}

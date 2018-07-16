@@ -1,5 +1,7 @@
 package com.automationframework.stepdefinitions;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -9,6 +11,7 @@ import com.automationframeworks.pageobjects.LoginPage;
 import com.automationframeworks.pageobjects.RegistrationPage;
 import com.cucumber.listener.Reporter;
 
+import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -25,7 +28,7 @@ public class Feature1StepDefinitions {
 	public void i_am_in_home_page() throws Throwable {
 		driver=WebdriverManager.getDriver();
 		homePage=new HomePage(driver);
-	  driver.get("http://store.demoqa.com/");
+	     driver.get("http://store.demoqa.com/");
 	}
 
 	@Given("^I cliked My account link to navigate to signup page$")
@@ -43,10 +46,15 @@ public class Feature1StepDefinitions {
 		 System.out.println("i am in then");
 	}
 
-	@When("^I entered username and email$")
-	public void i_entered_username_and_email() throws Throwable {
-		registrationPage.enterEmail("samaysimant123@gmail.com");
-		registrationPage.enterUserName("samaysimant");
+	@When("^I entered \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void i_entered_and(String username, String email) throws Throwable {
+	//	List<List<String>> data = arg1.raw();
+	//	registrationPage.enterUserName(data.get(0).get(0));
+	//	registrationPage.enterEmail(data.get(0).get(1));
+		
+		registrationPage.enterUserName(username);
+		registrationPage.enterEmail(email);
+		
 	
 	}
 
@@ -70,6 +78,6 @@ public class Feature1StepDefinitions {
 	@Then("^I should be at landing page$")
 	public void i_should_be_at_landing_page() throws Throwable {
 	  System.out.println("I am at landing page");
-	  Assert.assertTrue(false);
+	 
 	}
 }
