@@ -35,10 +35,10 @@ public class Hooks
     @Before
     public void before(Scenario scenario) throws MalformedURLException {
     	System.out.println("Initiate Driver");
-    	//driver=WebdriverManager.intializeDriver();
-    	DesiredCapabilities capabilities = new DesiredCapabilities();
-        URL appiumURL = new URL("http://127.0.0.1:4723/wd/hub");
-        driver = new AndroidDriver<WebElement>(appiumURL, capabilities);
+    	driver=WebdriverManager.intializeDriver();
+//    	DesiredCapabilities capabilities = new DesiredCapabilities();
+//        URL appiumURL = new URL("http://127.0.0.1:4723/wd/hub");
+//        driver = new AndroidDriver<WebElement>(appiumURL, capabilities);
     	System.out.println("Current scenario:"+scenario.getName());
     	try {
 			ExcelReader.feedInputData(scenario.getName());

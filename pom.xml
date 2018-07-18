@@ -109,9 +109,10 @@
 					<!-- <parallel>classes</parallel> <threadCount>2</threadCount> -->
 					<systemPropertyVariables>
 						<browser>${browser.test}</browser>
-
 					</systemPropertyVariables>
-
+					<suiteXmlFiles>
+						<suiteXmlFile>${suite.file}</suiteXmlFile>
+					</suiteXmlFiles>
 
 				</configuration>
 			</plugin>
@@ -173,12 +174,23 @@
 
 	<profiles>
 		<profile>
-			<id>smokechrome</id>
+			<id>cucumber</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
 				<browser.test>chrome</browser.test>
+				<suite.file>cucumberSuite.xml</suite.file>
+			</properties>
+		</profile>
+		<profile>
+			<id>testng</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<browser.test>chrome</browser.test>
+				<suite.file>testNgSuite.xml</suite.file>
 			</properties>
 		</profile>
 	</profiles>

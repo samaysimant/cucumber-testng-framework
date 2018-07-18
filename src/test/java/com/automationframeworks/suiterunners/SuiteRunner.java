@@ -25,7 +25,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 				"com.cucumber.listener.ExtentCucumberFormatter:test-output/extent-reports/report.html" }
         ,tags= {"@smoke"}         
 		)
-public class SuiteRunnerTest {
+public class SuiteRunner {
 	private TestNGCucumberRunner testNGCucumberRunner;
 
 	

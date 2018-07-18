@@ -26,7 +26,8 @@ public class WebdriverManager {
 	public static WebDriver intializeDriver() {
 		String browser = System.getProperty("browser");
 		System.out.println("The browser is:"+browser);
-		if(browser==null) {
+		if(browser==null|browser.equals("")) {
+			System.out.println("No browser specified");
 			browser="chrome";
 		}
 		if (browser.equalsIgnoreCase("chrome")) {
