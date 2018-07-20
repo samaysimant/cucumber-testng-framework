@@ -1,4 +1,4 @@
-package com.automationframeworks.suiterunners;
+package com.automationframeworks.suiterunners.cucumber;
 
 import java.io.File;
 import java.io.IOException;

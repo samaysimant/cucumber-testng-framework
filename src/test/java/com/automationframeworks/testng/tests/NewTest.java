@@ -1,4 +1,4 @@
-package com.automationframeworks.testngtests;
+package com.automationframeworks.testng.tests;
 
 import org.testng.annotations.Test;
 

@@ -1,4 +1,4 @@
-package com.automationframework.stepdefinitions;
+package com.automationframework.cucumber.stepdefinitions;
 
 import java.util.List;
 

@@ -9,45 +9,54 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
-import com.automationframework.stepdefinitions.Hooks;
+import com.automationframework.cucumber.stepdefinitions.Hooks;
 import com.google.common.io.Files;
 
 public class WebdriverManager {
-	
+
 	private static WebDriver driver;
 	private static final String fileName = "Screenshot";
 	private static Integer fileNumber = 1;
-	
+	public static final long IMPLICIT_WAIT=30;
+
 	public static WebDriver getDriver() {
 		return driver;
 	}
 
 	public static WebDriver intializeDriver() {
 		String browser = System.getProperty("browser");
-		System.out.println("The browser is:"+browser);
-		if(browser==null|browser.equals("")) {
+		System.out.println("The browser is:" + browser);
+		if (browser == null | browser.equals("")) {
 			System.out.println("No browser specified");
-			browser="chrome";
+			browser = "chrome";
 		}
-		if (browser.equalsIgnoreCase("chrome")) {
-		//	browser = ;
+
+		switch (browser.toLowerCase()) {
+
+		case "chrome":
+			System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+			driver = new ChromeDriver();
+			break;
+		case "firefox":
+			break;
+	    
+		case "iexplore" :
+			 break;
+		}
+			
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
 		
-		System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
-		driver=new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Hooks.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		}
 		return driver;
 	}
 
 	public static void quitDriver() {
 		driver.quit();
 	}
-	
+
 	public static String addScreenshot() {
 		String screenshotName = fileName + fileNumber.toString();
-		String reportPath=System.getProperty("user.dir")+"/test-output/extent-reports";
+		String reportPath = System.getProperty("user.dir") + "/test-output/extent-reports";
 		++fileNumber;
 		System.out.println("Taking screeenshot:" + screenshotName);
 		try {
@@ -63,20 +72,21 @@ public class WebdriverManager {
 				screenshotFolderPath.mkdirs();
 			}
 			Files.copy(sourcePath, destinationPath);
-			System.out.println("------+++++"+System.getProperty("reportPath"));
+			System.out.println("------+++++" + System.getProperty("reportPath"));
 			if (System.getProperty("reportPath") != null) {
-		//	return	"http://"+InetAddress.getLocalHost().getHostAddress() + ":8082/ExecutionReport" + currTimeStamp+ "/screenshots/" + screenshotName + ".png" ;
-			
-			}else {
+				// return "http://"+InetAddress.getLocalHost().getHostAddress() +
+				// ":8082/ExecutionReport" + currTimeStamp+ "/screenshots/" + screenshotName +
+				// ".png" ;
+
+			} else {
 				System.out.println("Screenshot :" + destinationPath.toString());
 				return destinationPath.toString();
 			}
 			// Copy taken screenshot from source location to destination location
-		
-			//System.out.println("Screenshot :" + destinationPath.toString());
+
+			// System.out.println("Screenshot :" + destinationPath.toString());
 			// return System.getProperty("user.dir") +
 			// "/test-output/extent-report/screenshots/" + screenshotName + ".png";
-			
 
 			// This attach the specified screenshot to the test
 		} catch (Exception e) {
