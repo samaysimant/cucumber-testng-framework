@@ -3,7 +3,7 @@ package com.automationframeworks.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.automationframeworks.Utility.Utility;
+import com.automationframeworks.utilities.Utility;
 import com.cucumber.listener.Reporter;
 
 public class RegistrationPage extends BaseNavigation{
@@ -20,7 +20,7 @@ public class RegistrationPage extends BaseNavigation{
 	public void enterUserName(String userName) {
 		Utility.repostWait(this.userName);
 		driver.findElement(this.userName).sendKeys(userName);
-		Reporter.addStepLog("Entered UserName");
+	//	Reporter.addStepLog("Entered UserName");
 	}
 	
 	public void enterEmail(String emailadd) {

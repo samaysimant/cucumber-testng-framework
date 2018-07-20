@@ -3,9 +3,9 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
  
-    <classes>
-      <class name="com.automationframeworks.suiterunners.SuiteRunner"/>
-   
-    </classes>
+    <packages>
+    <package name="com.automationframeworks.suiterunners.cucumber"/>
+    </packages>
+     
   </test> <!-- Test -->
 </suite> <!-- Suite -->

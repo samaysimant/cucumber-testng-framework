@@ -1,4 +1,4 @@
-package com.automationframeworks.Utility;
+package com.automationframeworks.utilities;
 
 import java.util.HashMap;
 import java.util.Map;

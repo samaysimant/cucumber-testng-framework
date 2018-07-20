@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
    <packages>
-  <package name="com.automationframeworks.testngtests"/>
+  <package name="com.automationframeworks.testng.tests"/>
   </packages>
    
     

@@ -3,7 +3,7 @@ package com.automationframeworks.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.automationframeworks.Utility.Utility;
+import com.automationframeworks.utilities.Utility;
 
 public class BaseNavigation {
 

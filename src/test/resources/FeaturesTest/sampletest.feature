@@ -37,9 +37,4 @@ Feature: Planit Automation Features
     When I enter my credentials and pressed submit
     Then I should be at landing page
 
-  @smoke2
-  Scenario: SampleTest4
-    Given I am in home page
-    And I cliked My account link to navigate to signup page
-    When I enter my credentials and pressed submit
-    Then I should be at landing page
+

@@ -10,8 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import com.automationframeworks.Utility.ExcelReader;
-import com.automationframeworks.Utility.WebdriverManager;
+import com.automationframeworks.utilities.ExcelReader;
+import com.automationframeworks.utilities.WebdriverManager;
 import com.codoid.products.exception.FilloException;
 import com.cucumber.listener.Reporter;
 
@@ -29,7 +29,7 @@ public class Hooks
 	public void before(Scenario scenario) throws MalformedURLException {
 		System.out.println("Initiate Driver");
 		driver = WebdriverManager.intializeDriver();
-
+		ExcelReader.setTestDataFileName("src/test/resources/testdata.xlsx");
 		try {
 			ExcelReader.feedInputData(scenario.getName());
 		} catch (FilloException e) {

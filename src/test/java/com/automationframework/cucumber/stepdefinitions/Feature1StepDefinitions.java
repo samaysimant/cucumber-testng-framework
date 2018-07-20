@@ -5,11 +5,11 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-import com.automationframeworks.Utility.DataHandler;
-import com.automationframeworks.Utility.WebdriverManager;
 import com.automationframeworks.pageobjects.HomePage;
 import com.automationframeworks.pageobjects.LoginPage;
 import com.automationframeworks.pageobjects.RegistrationPage;
+import com.automationframeworks.utilities.DataHandler;
+import com.automationframeworks.utilities.WebdriverManager;
 import com.cucumber.listener.Reporter;
 
 import cucumber.api.DataTable;

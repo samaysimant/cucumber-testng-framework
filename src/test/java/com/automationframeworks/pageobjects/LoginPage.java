@@ -3,8 +3,7 @@ package com.automationframeworks.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-
-import com.automationframeworks.Utility.Utility;
+import com.automationframeworks.utilities.Utility;
 import com.cucumber.listener.Reporter;
 
 
@@ -32,20 +31,20 @@ public class LoginPage extends BaseNavigation{
 	public void enterUserName(String userNameVal) {
 		Utility.repostWait(userName);
 		driver.findElement(userName).sendKeys(userNameVal);
-		Reporter.addStepLog("Filled UserName");
+	//	Reporter.addStepLog("Filled UserName");
 		
 	}
 	public void enterPassword(String passwordVal) {
 		Utility.repostWait(password);
 		driver.findElement(password).sendKeys(passwordVal);
-		Reporter.addStepLog("Filled Password");
+		
 		
 	}
 	
 	public void clickLogin() {
 		Utility.repostWait(btnLogin);
 		driver.findElement(btnLogin).click();
-		Reporter.addStepLog("Clicked on Login");
+	//	Reporter.addStepLog("Clicked on Login");
 		
 	}
 	
