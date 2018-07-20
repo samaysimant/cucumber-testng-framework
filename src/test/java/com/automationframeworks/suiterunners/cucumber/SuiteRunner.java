@@ -22,7 +22,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 @CucumberOptions(features = "src/test/resources/FeaturesTest", format = { "pretty", "html:target/site/cucumber-pretty",
 		"rerun:target/rerun.txt",
 		"json:target/cucumber1.json" }, glue = { "com/automationframework/cucumber/stepdefinitions" }, plugin = {
-				"com.cucumber.listener.ExtentCucumberFormatter:test-output/extent-reports/report.html" }, tags = {
+				"com.cucumber.listener.ExtentCucumberFormatter:test-output/cucumber-extent-report/report.html" }, tags = {
 						"@smoke" })
 public class SuiteRunner {
 	private TestNGCucumberRunner testNGCucumberRunner;

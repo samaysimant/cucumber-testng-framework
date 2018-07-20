@@ -29,7 +29,7 @@ public class Hooks
 	public void before(Scenario scenario) throws MalformedURLException {
 		System.out.println("Initiate Driver");
 		driver = WebdriverManager.intializeDriver();
-		ExcelReader.setTestDataFileName("src/test/resources/testdata.xlsx");
+		ExcelReader.setTestDataFileName("src/test/resources/testdatacucumber.xlsx");
 		try {
 			ExcelReader.feedInputData(scenario.getName());
 		} catch (FilloException e) {
